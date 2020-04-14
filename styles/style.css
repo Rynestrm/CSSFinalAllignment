@@ -1,10 +1,10 @@
-default styles
+/* ------ default styles ------ */
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
-/* ------ default styles ------ */
 
 body,
 html {
