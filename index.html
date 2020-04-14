@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>To Do List</title>
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gotu|Oswald&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b30d2ce0c6.js" crossorigin="anonymous"></script>
     <!-- style sheets -->
     <link rel="stylesheet" href="styles\style.css">
     <!-- javascript -->
@@ -18,11 +21,12 @@
   <body>
    <div class="container">
       <header>
-        <h1>Check It - The Simple To Do List</h1>
+        <h1 class="long">Check It - The Simple To Do List</h1>
+        <div class="short"><h1>Check It<br>The To Do List</h1></div>
       </header>
       <main>
         <section>
-          <h2> Struggling to Stay On Top Of Your To-Dos? </h2>
+          <h2> Struggling to Stay On Top<br class="break"> Of Your To-Dos? </h2>
           <p> Staying motivated and on-track can be tricky! Use this simple to do list to help you record all of your to-do tasks. When you've completed the task, check it off and it will move to the bottom of your list auto-magically! Done with that task forever? Click the delete button and your task will be permanently removed. </p>
         </section>
 
@@ -30,7 +34,7 @@
           <h2> My To Do List </h2>
           <form>
             <label for="toDo">Add an item to the list: </label>
-            <input type="text" id="toDo" placeholder="Things To Do">
+            <input type="text" id="toDo" placeholder="--> What do you need to do? <--">
             <button id="button">Add To List</button>
           </form>
           <ul id="toDoList"></ul>

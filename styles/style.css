@@ -9,10 +9,14 @@ default styles
 body,
 html {
     height: 100%;
+    width: 100%;
     margin: 0;
     font-size: 10px;
-    background-image: linear-gradient(#ffffff48, #ffffff48), url(../img/shelf.jpg);
+    background-image: linear-gradient(to bottom, #ffffffbe, #ffffff41), url(../img/shelf.jpg);
+    background-position: right 0;
+    background-repeat: no-repeat;
 }
+
 
 p,
 a,
@@ -46,6 +50,10 @@ label {
     font-family: 'Oswald', sans-serif;
 }
 
+.break {
+    display: none;
+}
+
 /* -------- styling -------- */
 
 h1 {
@@ -64,6 +72,10 @@ h2 {
     min-height: 100%;
     width: 90%;
     margin: 0 auto -70px auto;
+}
+
+.container .short {
+    display: none;
 }
 
 /* keeping footer at the bottom  */
@@ -95,10 +107,8 @@ main
 section:nth-child(2) {
     width: 30%;
     margin-right: 1%;
-    min-height: 500px;
-    background-image: url(../img/todo.png);
-    background-position: 0 19px;
-    background-repeat: no-repeat;
+    /* min-height: 500px; */
+    background-color: #d3d3d35d;
 }
 
 section:nth-child(2) h2 {
@@ -112,15 +122,22 @@ form {
 }
 
 input {
-    margin-left: 10px;
     font-size: 2em;
-    background: transparent;
-    border: 0px;
+    background: #afafaf;
+    border: 1px solid #afafaf;
 }
 
-#button {
-    max-width: 90%;
-    margin-left: 8px;
+input::placeholder {
+    text-align: center;
+}
+
+input:focus {
+    background-color: #fff;
+}
+
+/* added to center check box in chrome */
+li input {
+    margin: 0 auto;
 }
 
 form label,
@@ -130,10 +147,24 @@ form button {
     justify-content: center;
 }
 
-ul {
+#toDoList {
     padding-left: 0;
     display: grid;
+    grid-gap: 1px;
     grid-template-columns: repeat(2, 1fr);
+}
+
+#toDoList li {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid #afaeae;
+    text-align: center;
+    background-color: #afaeae8f;
+}
+
+/* changes button size */
+.delete {
+    font-size: 1.2em;
 }
 
 /* ---- footer ---- */
@@ -144,3 +175,84 @@ footer {
 
 /* media queries */
 
+@media screen and (min-width: 1400px) {
+    #toDoList {
+        grid-gap: 0 10px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main
+    section p {
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .break {
+        display: block;
+    }
+
+    main
+    section p {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    main
+    section:first-of-type{
+        width: 50%;
+    }
+
+    main
+    section:nth-child(2) {
+        width: 50%;
+    }
+
+    #toDoList {
+        grid-gap: 0 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container .long {
+        display: none;
+    }
+    .container .short {
+        text-align: center;
+        display: block;
+    }
+
+    #toDoList {
+        grid-gap: 0 1px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container h1 {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .container h2 {
+        margin: 0;
+    }
+    
+    main {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    main section:first-of-type {
+        width: 100%;   
+    }
+
+    main section:nth-child(2) {
+        width: 100%;
+    }
+
+    #toDoList {
+        grid-gap: 0 10px;
+    }
+}

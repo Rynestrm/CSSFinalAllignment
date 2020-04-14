@@ -1,4 +1,3 @@
-
 let button = document.getElementById('button');
 let ul = document.getElementById('toDoList');
 //use event handler property to trigger addToList when the button is created
@@ -42,6 +41,3 @@ function addToList(e) {
     //need to use a method to 'remove' this element once we target it 
     deleted.remove(); 
   }
-
-
-
