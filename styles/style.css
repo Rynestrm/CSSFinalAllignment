@@ -161,12 +161,6 @@ form button {
     background-color: #afaeae8f;
 }
 
-/* ---- footer ---- */
-footer {
-    /* height: 50px; */
-}
-
-
 /* media queries */
 
 @media screen and (min-width: 1400px) {
